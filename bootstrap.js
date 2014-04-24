@@ -436,7 +436,7 @@ var bootstrap = {
     hasDeclaration : function(declarations, property, value, prefixAgnostic, checkFunctionNameOnly){
         if(checkFunctionNameOnly && value.indexOf('(') > -1){
             value = value.match(/\b(\w+)\(/)[1];
-            var rx = new RegExp("\\b" + value + "\\(", "i");
+            var rx = new RegExp("[\\s:,]" + value + "\\(", "i");
         }else{
             checkFunctionNameOnly = false;
         }
