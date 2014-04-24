@@ -347,6 +347,7 @@ var bootstrap = {
             dump("value = " + value);
             var parts = bootstrap.oldGradientParser(value), type; // console.log(JSON.stringify(parts, null, 2))
             for(var i = 0; i < parts.length; i++){
+                type = '';
                 if(parts[i].name === '-webkit-gradient'){
                     type = parts[i].args[0].name;
                     newValue += type + '-gradient('; // radial or linear
