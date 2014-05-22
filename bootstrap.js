@@ -347,6 +347,7 @@ var bootstrap = {
             dump("value = " + value);
             var parts = bootstrap.oldGradientParser(value), type; // console.log(JSON.stringify(parts, null, 2))
             for(var i = 0; i < parts.length; i++){
+                type = '';
                 if(parts[i].name === '-webkit-gradient'){
                     type = parts[i].args[0].name;
                     newValue += type + '-gradient('; // radial or linear
@@ -435,7 +436,7 @@ var bootstrap = {
     hasDeclaration : function(declarations, property, value, prefixAgnostic, checkFunctionNameOnly){
         if(checkFunctionNameOnly && value.indexOf('(') > -1){
             value = value.match(/\b(\w+)\(/)[1];
-            var rx = new RegExp("\\b" + value + "\\(", "i");
+            var rx = new RegExp("[\\s:,]" + value + "\\(", "i");
         }else{
             checkFunctionNameOnly = false;
         }
