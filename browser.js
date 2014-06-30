@@ -184,7 +184,7 @@ TracingListener.prototype =
 {
     onDataAvailable: function(request, context, inputStream, offset, count)
     {
-        if (request && request.URI && request.URI.path && request.URI.path.indexOf(".css") >= 0) {
+        if (request.contentType.match(/^text\/css$/)) {
           var binaryInputStream = CCIN("@mozilla.org/binaryinputstream;1",
                 "nsIBinaryInputStream");
           binaryInputStream.setInputStream(inputStream);
