@@ -1,0 +1,5 @@
+.gitignore
+build/
+output/
+repack_work/
+logs/
